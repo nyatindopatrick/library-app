@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bookform {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 30%;
+  justify-self: center;
+}
+
+.bookform input {
+  margin: 1rem 0px;
+  padding: 0.6rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.read {
+  color: blueviolet;
+}
+
+#bookslist {
+  color: black;
+}

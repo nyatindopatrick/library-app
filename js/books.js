@@ -1,72 +1,24 @@
-// get books from localstorage
-const getBooks = () => {
-  let lib = localStorage.getItem("library");
-  return lib ? JSON.parse(lib) : [];
-};
+import { displayForm, addBook, show } from './index';
 
-const save = (book) => {
-  localStorage.setItem("library", JSON.stringify(book));
+function Book() {
+  this.title = document.querySelector('#booktitle').value;
+  this.author = document.querySelector('#author').value;
+  this.read = false;
+}
+
+// event listener for new book button
+const btn = document.querySelector('#newbook');
+btn.addEventListener('click', displayForm());
+
+// execute submit event
+const bookForm = document.querySelector('#bookform');
+bookForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const book = new Book();
+  addBook(book);
+  displayForm();
   show();
-};
+});
 
-// add a book to library array
-const addBook = (book) => {
-  const { title, author } = book;
-  let books = getBooks();
-  let dup = books.filter(
-    (item) => item.title == title && item.author == author
-  );
-  if (dup.length == 0 && title.length > 0) {
-    books.push({ title, author });
-  }
-  return save(books);
-};
-
-// loop list of books
-const render = (books) => {
-  let booksList = "";
-  books.forEach((book, i) => {
-    const { title, author, read } = book;
-    booksList += `
-      <tr onClick={read(${i})} class=" ${read ? "read" : ""}">
-        <th scope="row">${i + 1}</th>
-        <td>${title}</td>
-        <td>by <i>${author}</i></td>
-        <td> ${read}</td>
-        <td ><span onClick="removeBook(${i})" class="del py-2 px-3">Delete</span></td>
-      </tr>
-      `;
-  });
-  return booksList;
-};
-
-// render the books list
-const show = () =>
-  (document.getElementById("bookslist").innerHTML = render(getBooks()));
-
-//   show or hide form
-const displayForm = () => {
-  let bkform = document.querySelector("#bookform");
-  btn.addEventListener("click", () => {
-    if (bkform.classList.contains("hidden")) {
-      bkform.classList.remove("hidden");
-      bkform.classList.add("show");
-    } else {
-      bkform.classList.add("hidden");
-    }
-  });
-};
-
-// delete a book
-const removeBook = (bk) => {
-  let books = getBooks();
-  books.splice(bk, 1);
-  save(books);
-};
-
-// change a book to read
-const read = (idx) => {
-  let books = getBooks();
-  if (books[idx]) books[idx].read = true;
-  save(books);
-};
+// load books list when page loads
+window.onload = show();

@@ -1,5 +1,3 @@
-import { displayForm, addBook, show } from './index';
-
 function Book() {
   this.title = document.querySelector('#booktitle').value;
   this.author = document.querySelector('#author').value;

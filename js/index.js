@@ -39,7 +39,7 @@ const addBook = (book) => {
   const { title, author } = book;
   const books = getBooks();
   const dup = books.filter(
-    (item) => item.title === title && item.author === author,
+    (item) => item.title === title && item.author === author
   );
   if (dup.length === 0 && title.length > 0) {
     books.push({ title, author });
@@ -47,7 +47,6 @@ const addBook = (book) => {
   return save(books);
 };
 
-const btn = document.querySelector('#newbook');
 const displayForm = () => {
   const bkform = document.querySelector('#bookform');
   btn.addEventListener('click', () => {
@@ -59,9 +58,6 @@ const displayForm = () => {
     }
   });
 };
-
-btn.addEventListener('click', displayForm());
-//   show or hide form
 
 // delete a book
 const removeBook = (bk) => {
@@ -75,8 +71,4 @@ const read = (idx) => {
   const books = getBooks();
   if (books[idx]) books[idx].read = true;
   save(books);
-};
-
-export {
-  displayForm, addBook, show, read, removeBook,
 };

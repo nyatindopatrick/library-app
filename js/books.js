@@ -1,11 +1,11 @@
 // get books from localstorage
 const getBooks = () => {
-  let lib = localStorage.getItem('library');
+  let lib = localStorage.getItem("library");
   return lib ? JSON.parse(lib) : [];
 };
 
 const save = (book) => {
-  localStorage.setItem('library', JSON.stringify(book));
+  localStorage.setItem("library", JSON.stringify(book));
   show();
 };
 
@@ -24,19 +24,17 @@ const addBook = (book) => {
 
 // loop list of books
 const render = (books) => {
-  let booksList = '';
+  let booksList = "";
   books.forEach((book, i) => {
     const { title, author, read } = book;
     booksList += `
-      <div onClick={read(${i})} class="item ${read ? 'read' : ''}">
-        <img
-          src="https://www.pngkit.com/png/detail/61-612708_open-book-vector-clipart-silhouette-symbol-icon-design.png"
-          alt=""
-        />
-        <h4>${title}</h4>
-        <p>by <i>${author}</i></p>
-        <button onClick="removeBook(${i})">Delete</button>
-      </div>
+      <tr onClick={read(${i})} class=" ${read ? "read" : ""}">
+        <th scope="row">${i + 1}</th>
+        <td>${title}</td>
+        <td>by <i>${author}</i></td>
+        <td> ${read}</td>
+        <td onClick="removeBook(${i})">Delete</td>
+      </tr>
       `;
   });
   return booksList;
@@ -44,17 +42,17 @@ const render = (books) => {
 
 // render the books list
 const show = () =>
-  (document.getElementById('bookslist').innerHTML = render(getBooks()));
+  (document.getElementById("bookslist").innerHTML = render(getBooks()));
 
 //   show or hide form
 const displayForm = () => {
-  let bkform = document.querySelector('#bookform');
-  btn.addEventListener('click', () => {
-    if (bkform.classList.contains('hidden')) {
-      bkform.classList.remove('hidden');
-      bkform.classList.add('show');
+  let bkform = document.querySelector("#bookform");
+  btn.addEventListener("click", () => {
+    if (bkform.classList.contains("hidden")) {
+      bkform.classList.remove("hidden");
+      bkform.classList.add("show");
     } else {
-      bkform.classList.add('hidden');
+      bkform.classList.add("hidden");
     }
   });
 };

@@ -13,14 +13,27 @@
     />
   </head>
   <body>
-    <div class="main">
+    <div class="container">
       <button id="newbook">NEW BOOK</button>
       <form class="bookform hidden" action="" id="bookform">
         <input placeholder="Title" type="text" name="title" id="title" />
         <input type="text" placeholder="Author" name="author" id="author" />
         <button type="submit">Save Book</button>
       </form>
-      <div id="bookslist"></div>
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Title</th>
+              <th scope="col">Author</th>
+              <th scope="col">Read status</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody id="bookslist"></tbody>
+        </table>
+      </div>
     </div>
     <script src="js/books.js"></script>
     <script src="js/index.js"></script>

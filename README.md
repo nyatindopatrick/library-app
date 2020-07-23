@@ -23,8 +23,6 @@
 
 ## Live Demo
 
-[Live Demo Link](https://raw.githack.com/hillarioh/The-next-web-clone/tnwBranch/index.html)
-
 ## Getting Started
 
 **Just fork it and fell free to use it.**
@@ -59,15 +57,9 @@ Just fork it and you are good to go.
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](github.com/hillarioh/The-next-web-clone/issues).
-
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Content inspired by the original youtube page.
 
 ## 📝 License
 

@@ -4,7 +4,10 @@ const getBooks = () => {
   return lib ? JSON.parse(lib) : [];
 };
 
-const save = (book) => localStorage.setItem('library', JSON.stringify(book));
+const save = (book) => {
+  localStorage.setItem('library', JSON.stringify(book));
+  show();
+};
 
 // add a book to library array
 const addBook = (book) => {
@@ -61,7 +64,6 @@ const removeBook = (bk) => {
   let books = getBooks();
   books.splice(bk, 1);
   save(books);
-  show();
 };
 
 // change a book to read
@@ -69,5 +71,4 @@ const read = (idx) => {
   let books = getBooks();
   if (books[idx]) books[idx].read = true;
   save(books);
-  show();
 };

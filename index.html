@@ -13,27 +13,49 @@
     />
   </head>
   <body>
-    <div class="container">
-      <button id="newbook">NEW BOOK</button>
-      <form class="bookform hidden" action="" id="bookform">
-        <input placeholder="Title" type="text" name="title" id="title" />
-        <input type="text" placeholder="Author" name="author" id="author" />
-        <button type="submit">Save Book</button>
-      </form>
-      <div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Title</th>
-              <th scope="col">Author</th>
-              <th scope="col">Read status</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody id="bookslist"></tbody>
-        </table>
+    <div class="container mt-4">
+      <div class="my-3 d-flex justify-content-end">
+        <button id="newbook" class="btn btn-primary my-3">
+          NEW BOOK
+        </button>
       </div>
+
+      <form class="bookform hidden" action="" id="bookform">
+        <div class="form-group">
+          <label for="bookform">Book Title: </label>
+          <input
+            type="text"
+            class="form-control"
+            name="title"
+            id="title"
+            placeholder="Enter book title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="author">Author: </label>
+          <input
+            type="text"
+            class="form-control"
+            name="author"
+            id="author"
+            placeholder="Enter author name"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Read status</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody id="bookslist"></tbody>
+      </table>
     </div>
     <script src="js/books.js"></script>
     <script src="js/index.js"></script>

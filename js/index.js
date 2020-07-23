@@ -1,4 +1,11 @@
-// get values from the form
+const btn = document.querySelector('#newbook');
+const bookForm = document.querySelector('#bookform');
+
+function Book() {
+  this.title = document.querySelector('#booktitle').value;
+  this.author = document.querySelector('#author').value;
+  this.read = false;
+}
 
 // get books from localstorage
 const getBooks = () => {
@@ -39,6 +46,7 @@ const addBook = (book) => {
   const { title, author } = book;
   const books = getBooks();
   const dup = books.filter(
+    // eslint-disable-next-line comma-dangle
     (item) => item.title === title && item.author === author
   );
   if (dup.length === 0 && title.length > 0) {
@@ -60,6 +68,7 @@ const displayForm = () => {
 };
 
 // delete a book
+// eslint-disable-next-line no-unused-vars
 const removeBook = (bk) => {
   const books = getBooks();
   books.splice(bk, 1);
@@ -67,8 +76,24 @@ const removeBook = (bk) => {
 };
 
 // change a book to read
+// eslint-disable-next-line no-unused-vars
 const read = (idx) => {
   const books = getBooks();
   if (books[idx]) books[idx].read = true;
   save(books);
 };
+
+// event listener for new book button
+btn.addEventListener('click', displayForm());
+
+// execute submit event
+bookForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const book = new Book();
+  addBook(book);
+  displayForm();
+  show();
+});
+
+// load books list when page loads
+window.onload = show();

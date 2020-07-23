@@ -7,7 +7,7 @@
 body {
   display: flex;
   justify-content: center;
-  background-image: url("/default.jpg");
+  background-image: url("/Images/default.jpg");
 }
 
 .bookform input {
@@ -29,4 +29,16 @@ table {
 
 #bookslist {
   color: black;
+}
+
+.del {
+  background-color: rgb(252, 133, 133);
+  color: antiquewhite;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.del:hover {
+  cursor: pointer;
+  background-color: rgb(240, 183, 183);
 }

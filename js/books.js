@@ -33,7 +33,7 @@ const render = (books) => {
         <td>${title}</td>
         <td>by <i>${author}</i></td>
         <td> ${read}</td>
-        <td onClick="removeBook(${i})">Delete</td>
+        <td ><span onClick="removeBook(${i})" class="del py-2 px-3">Delete</span></td>
       </tr>
       `;
   });

@@ -18,16 +18,23 @@ const getBooks = () => {
 const render = (books) => {
   let booksList = '';
   books.forEach((book, i) => {
-    const { title, author, read, pages } = book;
+    const {
+      title, author, read, pages,
+    } = book;
+
     booksList += `
       <tr>
         <th scope="row">${i + 1}</th>
         <td>${title}</td>
         <td>by <i>${author}</i></td>
         <td>${pages || 'unknown'}</td>
-        <td> <button type="button" onClick={read(${i})} class="btn btn-${
-      read ? 'success' : 'primary'
-    }">${read ? 'Read' : 'Unread'}</button></td>
+        <td> 
+        <button type="button" 
+        onClick={read(${i})} 
+        class="btn btn-${read ? 'success' : 'primary'}">
+        ${read ? 'Read' : 'Unread'}
+        </button>
+        </td>
         <td ><span onClick="removeBook(${i})" class="del py-2 px-3">Delete</span></td>
       </tr>
       `;
@@ -47,7 +54,10 @@ const save = (book) => {
 
 // add a book to library array
 const addBook = (book) => {
-  const { title, author, read, pages } = book;
+  const {
+    title, author, read, pages,
+  } = book;
+
   const books = getBooks();
   const dup = books.filter(
     // eslint-disable-next-line comma-dangle

@@ -91,6 +91,7 @@ bookForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const book = new Book();
   addBook(book);
+  bookForm.reset();
   displayForm();
   show();
 });

@@ -41,6 +41,27 @@
             placeholder="Enter author name"
           />
         </div>
+
+        <div class="form-group">
+          <label for="pages">No. of pages: </label>
+          <input
+            type="number"
+            class="form-control"
+            name="pages"
+            id="pages"
+            placeholder="Number of pages"
+          />
+        </div>
+
+        <div class="check form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            name="read"
+            id="read"
+          />
+          <label class="form-check-label" for="read">Read</label>
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
 
@@ -50,6 +71,7 @@
             <th scope="col">#</th>
             <th scope="col">Title</th>
             <th scope="col">Author</th>
+            <th scope="col">Pages</th>
             <th scope="col">Read status</th>
             <th scope="col"></th>
           </tr>

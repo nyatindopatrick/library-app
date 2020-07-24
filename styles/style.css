@@ -42,3 +42,12 @@ table {
   cursor: pointer;
   background-color: rgb(240, 183, 183);
 }
+
+.check {
+  margin: 1rem 0;
+}
+
+.check label {
+  margin: 10px 0;
+  margin-left: 1rem;
+}

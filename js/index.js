@@ -4,7 +4,8 @@ const bookForm = document.querySelector('#bookform');
 function Book() {
   this.title = document.querySelector('#booktitle').value;
   this.author = document.querySelector('#author').value;
-  this.read = false;
+  this.read = document.querySelector('#read').checked;
+  this.pages = document.querySelector('#pages').value;
 }
 
 // get books from localstorage
@@ -17,12 +18,13 @@ const getBooks = () => {
 const render = (books) => {
   let booksList = '';
   books.forEach((book, i) => {
-    const { title, author, read } = book;
+    const { title, author, read, pages } = book;
     booksList += `
-      <tr onClick={read(${i})} class=" ${read ? 'read' : ''}">
+      <tr>
         <th scope="row">${i + 1}</th>
         <td>${title}</td>
         <td>by <i>${author}</i></td>
+        <td>${pages ? pages : 'unknown'}</td>
         <td> ${read}</td>
         <td ><span onClick="removeBook(${i})" class="del py-2 px-3">Delete</span></td>
       </tr>
@@ -43,14 +45,14 @@ const save = (book) => {
 
 // add a book to library array
 const addBook = (book) => {
-  const { title, author } = book;
+  const { title, author, read, pages } = book;
   const books = getBooks();
   const dup = books.filter(
     // eslint-disable-next-line comma-dangle
     (item) => item.title === title && item.author === author
   );
   if (dup.length === 0 && title.length > 0) {
-    books.push({ title, author });
+    books.push({ title, author, read, pages });
   }
   return save(books);
 };
@@ -72,14 +74,6 @@ const displayForm = () => {
 const removeBook = (bk) => {
   const books = getBooks();
   books.splice(bk, 1);
-  save(books);
-};
-
-// change a book to read
-// eslint-disable-next-line no-unused-vars
-const read = (idx) => {
-  const books = getBooks();
-  if (books[idx]) books[idx].read = true;
   save(books);
 };
 

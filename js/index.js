@@ -30,7 +30,7 @@ const render = (books) => {
         <td>${pages || 'unknown'}</td>
         <td> 
         <button type="button" 
-        onClick={read(${i})} 
+        onClick="read(${i})"
         class="btn btn-${read ? 'success' : 'primary'}">
         ${read ? 'Read' : 'Unread'}
         </button>

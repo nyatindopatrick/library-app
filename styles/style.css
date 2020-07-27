@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-image: url("/Images/default.jpg");
+}
+
+.bookform input {
+  margin: 1rem 0;
+  padding: 0.6rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.show {
+  display: block;
+}
+
+table {
+  color: white;
+}
+
+#bookslist {
+  color: black;
+}
+
+.del {
+  background-color: rgb(252, 133, 133);
+  color: antiquewhite;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.del:hover {
+  cursor: pointer;
+  background-color: rgb(240, 183, 183);
+}
+
+.check {
+  margin: 1rem 0;
+}
+
+.check label {
+  margin: 10px 0;
+  margin-left: 1rem;
+}

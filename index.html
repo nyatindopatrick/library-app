@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container mt-4">
+      <div class="my-3 d-flex justify-content-end">
+        <button id="newbook" class="btn btn-primary my-3">
+          NEW BOOK
+        </button>
+      </div>
+
+      <form class="bookform hidden mb-3" action="" id="bookform">
+        <div class="form-group">
+          <label for="booktitle">Book Title: </label>
+          <input
+            type="text"
+            class="form-control"
+            name="title"
+            id="booktitle"
+            placeholder="Enter book title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="author">Author: </label>
+          <input
+            type="text"
+            class="form-control"
+            name="author"
+            id="author"
+            placeholder="Enter author name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="pages">No. of pages: </label>
+          <input
+            type="number"
+            class="form-control"
+            name="pages"
+            id="pages"
+            placeholder="Number of pages"
+          />
+        </div>
+
+        <div class="check form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            name="read"
+            id="read"
+          />
+          <label class="form-check-label" for="read">Read</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Pages</th>
+            <th scope="col">Read status</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody id="bookslist"></tbody>
+      </table>
+    </div>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

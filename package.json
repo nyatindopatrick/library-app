@@ -1,0 +1,29 @@
+{
+  "name": "library-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyatindopatrick/library-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nyatindopatrick/library-app/issues"
+  },
+  "homepage": "https://github.com/nyatindopatrick/library-app#readme",
+  "dependencies": {
+    "eslint-config-airbnb": "^18.2.0",
+    "stylelint-config-standard": "^20.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-react": "^7.20.3"
+  }
+}
